@@ -1,0 +1,24 @@
+<!-- appname/templates/appname/generate_reading.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarot Card Reading</title>
+</head>
+<body>
+    <h1>Generated Tarot Reading</h1>
+    <ul>
+        {% for card in cards %}
+            <li>
+                <h2>{{ card.name }}</h2>
+                <img src="{{ card.image.url }}" alt="{{ card.name }}" width="200">
+                <p><strong>Keywords:</strong> {{ card.keywords }}</p>
+                <p><strong>Upright Meaning:</strong> {{ card.upright_meaning }}</p>
+                <p><strong>Reversed Meaning:</strong> {{ card.reversed_meaning }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'generate' %}" class="btn btn-primary">Generate Another Reading</a>
+    <a href="{% url 'home' %}">Go back to Home</a>
+</body>
+</html>

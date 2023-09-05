@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Tarot Card Generator</title>
+</head>
+<body>
+    <h1>Random 掛  Generator</h1>
+    <p><strong>Name:</strong> {{ number }}</p>
+    <p><strong>Description:</strong> {{ altnumber }}</p>
+    <img src="{{ randomgua.image.url }}" alt="{{ randomgua.name }}" w200">
+    <a href="{% url 'flipping' %}">Generate Another</a>
+</body>
+</html>
